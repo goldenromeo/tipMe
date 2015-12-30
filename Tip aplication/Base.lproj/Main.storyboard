@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tip_aplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,97 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKh-fX-pAQ">
+                                <rect key="frame" x="274" y="28" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0.00" textAlignment="center" minimumFontSize="67" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-es-b8m">
+                                <rect key="frame" x="135" y="93" width="331" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="Tjs-dj-8Ec"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lQ-CC-EUW">
+                                <rect key="frame" x="151" y="276" width="52" height="30"/>
+                                <state key="normal" title="15 %😀"/>
+                                <connections>
+                                    <action selector="set15PercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="utc-1z-0eX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ii-tH-BMc">
+                                <rect key="frame" x="271" y="276" width="50" height="30"/>
+                                <state key="normal" title="20%😊"/>
+                                <connections>
+                                    <action selector="set20PercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZo-b6-nAD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N35-Fo-oRE">
+                                <rect key="frame" x="271" y="385" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mM-yB-Ee1">
+                                <rect key="frame" x="255" y="414" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter bill amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-e0-ygM">
+                                <rect key="frame" x="236" y="443" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="press on desired tip amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWf-Gi-wZN">
+                                <rect key="frame" x="193" y="472" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13K-vs-ZoB">
+                                <rect key="frame" x="407" y="276" width="50" height="30"/>
+                                <state key="normal" title="30%☺️"/>
+                                <connections>
+                                    <action selector="set30PercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NhX-MA-F2d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rWf-Gi-wZN" firstAttribute="top" secondItem="8bP-e0-ygM" secondAttribute="bottom" constant="8" symbolic="YES" id="0gI-ax-mnG"/>
+                            <constraint firstItem="3mM-yB-Ee1" firstAttribute="top" secondItem="N35-Fo-oRE" secondAttribute="bottom" constant="8" symbolic="YES" id="0yM-2X-8kz"/>
+                            <constraint firstItem="0Ii-tH-BMc" firstAttribute="leading" secondItem="N35-Fo-oRE" secondAttribute="leading" id="Bvx-QM-p5a"/>
+                            <constraint firstItem="rWf-Gi-wZN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DP6-Ge-zef"/>
+                            <constraint firstItem="6lQ-CC-EUW" firstAttribute="top" secondItem="Zot-es-b8m" secondAttribute="bottom" constant="61" id="Jwt-hN-UbN"/>
+                            <constraint firstItem="6lQ-CC-EUW" firstAttribute="baseline" secondItem="0Ii-tH-BMc" secondAttribute="firstBaseline" id="Lgw-Tp-Xnv"/>
+                            <constraint firstItem="13K-vs-ZoB" firstAttribute="leading" secondItem="0Ii-tH-BMc" secondAttribute="trailing" constant="86" id="O4P-RI-MrI"/>
+                            <constraint firstItem="N35-Fo-oRE" firstAttribute="centerX" secondItem="Zot-es-b8m" secondAttribute="centerX" id="QHi-P3-MPh"/>
+                            <constraint firstItem="0Ii-tH-BMc" firstAttribute="leading" secondItem="6lQ-CC-EUW" secondAttribute="trailing" constant="68" id="QPw-C7-soh"/>
+                            <constraint firstItem="3mM-yB-Ee1" firstAttribute="centerX" secondItem="N35-Fo-oRE" secondAttribute="centerX" id="RY9-RA-2cQ"/>
+                            <constraint firstItem="N35-Fo-oRE" firstAttribute="top" secondItem="0Ii-tH-BMc" secondAttribute="bottom" constant="79" id="RwD-Y2-rD5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rWf-Gi-wZN" secondAttribute="bottom" constant="107" id="WUa-Us-Ldk"/>
+                            <constraint firstItem="8bP-e0-ygM" firstAttribute="top" secondItem="3mM-yB-Ee1" secondAttribute="bottom" constant="8" symbolic="YES" id="cbz-5S-hW2"/>
+                            <constraint firstItem="GKh-fX-pAQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gEh-fk-THh"/>
+                            <constraint firstItem="0Ii-tH-BMc" firstAttribute="baseline" secondItem="13K-vs-ZoB" secondAttribute="baseline" id="gLL-FJ-LWd"/>
+                            <constraint firstItem="8bP-e0-ygM" firstAttribute="centerX" secondItem="3mM-yB-Ee1" secondAttribute="centerX" id="kIt-wM-8Gr"/>
+                            <constraint firstItem="GKh-fX-pAQ" firstAttribute="centerX" secondItem="Zot-es-b8m" secondAttribute="centerX" id="m03-1k-Ydc"/>
+                            <constraint firstItem="Zot-es-b8m" firstAttribute="top" secondItem="GKh-fX-pAQ" secondAttribute="bottom" constant="44" id="u0N-bw-xyr"/>
+                            <constraint firstItem="rWf-Gi-wZN" firstAttribute="centerX" secondItem="8bP-e0-ygM" secondAttribute="centerX" id="zF1-4b-xtW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tipLabel" destination="Zot-es-b8m" id="bfo-Sa-kTl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="182" y="281"/>
         </scene>
     </scenes>
 </document>
