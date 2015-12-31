@@ -42,12 +42,23 @@ class SettingsViewController: UIViewController {
             defaults.synchronize()
             //print(customTipBox.text)
            
+        }else
+        {
+            defaults.setInteger(30, forKey: "customUserTipValue")
+            defaults.synchronize()
+
         }
       
         
 
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        customTipBox.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
