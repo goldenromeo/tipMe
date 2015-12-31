@@ -17,24 +17,32 @@ The following **optional** features are implemented:
 * [ ] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] Launch Screen
-- [ ] 3 buttons
-
+- [x] Launch Screen.
+- [x] 3 buttons with smiley faces.
+- [x] if user clicks set on settings with no additional input button goes back to default.
+- [x] smiley faces stays across default change
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/bJOwNKW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+
+
+My main challenge was starting the project, (no, I was not procastinating) I had issues starting the app because I did not have access to a Mac as I have always been on the dual boot Linux and Windows side. After that was fixed, I quickly outlined the app and starting looking at Youtube videos on how to build an iPhone app. After opening Xcode I had trouble getting adjusted to the mac way: keyboard shorcuts, moving inside the app (using trackpad vs windows/linux sliders), etc. While building the app building the interface took me the most time, until I found out about applying sugested constrains; they're very helpful.
+
+
+If I had the opportunity to start again, I would have added the launch keyboard on app start at the beggining because it would have made everything a lot easier . 
 
 ## License
 
