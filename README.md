@@ -25,7 +25,7 @@ The following **additional** features are implemented:
 - [x] 3 buttons with smiley faces.
 - [x] if user clicks set on settings with no additional input button goes back to default.
 - [x] smiley faces stays across default change
-- 
+ 
 
 ## Video Walkthrough 
 
