@@ -82,7 +82,7 @@
                                     <navigationItem title="Tip Me" id="jJB-gz-v5K">
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Mol-4u-wJ3">
                                             <connections>
-                                                <segue destination="5w4-6y-d1L" kind="show" id="ePO-Om-WmU"/>
+                                                <segue destination="5w4-6y-d1L" kind="show" id="bfA-7B-4Op"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -116,6 +116,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="customButton" destination="13K-vs-ZoB" id="KNE-Z3-fiW"/>
                         <outlet property="tipLabel" destination="Zot-es-b8m" id="bfo-Sa-kTl"/>
                     </connections>
                 </viewController>
@@ -138,7 +139,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNd-zV-WUj">
                                 <rect key="frame" x="245" y="61" width="111" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="ZUe-Zg-1kw"/>
+                                    <constraint firstAttribute="width" constant="111" id="OJ5-M3-mDU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,26 +148,18 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9L-XO-Yk2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="aoV-iT-tfU"/>
+                                    <constraint firstAttribute="height" constant="44" id="iFP-Kp-ydn"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Tip Me Settings" id="V9Y-Xi-Znl">
                                         <barButtonItem key="rightBarButtonItem" title="Back" id="f2n-mG-KIp">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="vF2-xU-JXB"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="WG6-j3-tKP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="30" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-BS-TiV">
-                                <rect key="frame" x="20" y="128" width="249" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="249" id="bap-Fz-fnR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom value will change rightmost tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-hu-hHm">
                                 <rect key="frame" x="20" y="289" width="297" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -188,32 +181,46 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-nm-t7M">
                                 <rect key="frame" x="295" y="150" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Z4R-jX-FFb"/>
+                                    <constraint firstAttribute="height" constant="30" id="Gi8-f1-OUR"/>
                                 </constraints>
                                 <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="CustomValueSetter:" destination="5w4-6y-d1L" eventType="touchUpInside" id="ZD5-ke-F8g"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="30" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JgE-Eh-uWz">
+                                <rect key="frame" x="20" y="137" width="199" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="BtQ-57-bDZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d9L-XO-Yk2" firstAttribute="top" secondItem="m74-EP-1N0" secondAttribute="top" id="4YX-Yw-Wf0"/>
-                            <constraint firstItem="ydx-hu-hHm" firstAttribute="leading" secondItem="Aez-DL-FqD" secondAttribute="leading" id="5h4-8i-Rei"/>
-                            <constraint firstItem="bBN-BS-TiV" firstAttribute="top" secondItem="GNd-zV-WUj" secondAttribute="bottom" constant="22" id="6DX-75-0hZ"/>
-                            <constraint firstItem="wUy-D3-TPs" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leading" constant="162" id="7Qg-TE-wVL"/>
-                            <constraint firstItem="ydx-hu-hHm" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leadingMargin" id="9as-zF-Zku"/>
-                            <constraint firstItem="ydx-hu-hHm" firstAttribute="top" secondItem="bBN-BS-TiV" secondAttribute="bottom" constant="87" id="CzW-97-KJ4"/>
-                            <constraint firstItem="ydx-hu-hHm" firstAttribute="leading" secondItem="bBN-BS-TiV" secondAttribute="leading" id="FDc-Rp-BkN"/>
-                            <constraint firstItem="ydx-hu-hHm" firstAttribute="centerY" secondItem="m74-EP-1N0" secondAttribute="centerY" id="LKJ-9Q-nSF"/>
-                            <constraint firstAttribute="trailing" secondItem="d9L-XO-Yk2" secondAttribute="trailing" id="LUe-ve-2yt"/>
-                            <constraint firstItem="Aez-DL-FqD" firstAttribute="top" secondItem="ydx-hu-hHm" secondAttribute="bottom" constant="23" id="V2M-BL-0dZ"/>
-                            <constraint firstItem="Aez-DL-FqD" firstAttribute="bottom" secondItem="wUy-D3-TPs" secondAttribute="bottom" id="ayo-fs-vpb"/>
-                            <constraint firstItem="d9L-XO-Yk2" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leading" id="ghA-XG-kEL"/>
-                            <constraint firstItem="oFB-nm-t7M" firstAttribute="top" secondItem="GNd-zV-WUj" secondAttribute="bottom" constant="44" id="ltK-UM-uEN"/>
-                            <constraint firstItem="GNd-zV-WUj" firstAttribute="top" secondItem="d9L-XO-Yk2" secondAttribute="bottom" constant="17" id="rL9-rv-Lzn"/>
-                            <constraint firstItem="oFB-nm-t7M" firstAttribute="centerY" secondItem="bBN-BS-TiV" secondAttribute="centerY" id="rsJ-Sr-1Wb"/>
-                            <constraint firstItem="oFB-nm-t7M" firstAttribute="leading" secondItem="bBN-BS-TiV" secondAttribute="trailing" constant="26" id="vIf-iZ-rUJ"/>
-                            <constraint firstItem="d9L-XO-Yk2" firstAttribute="centerX" secondItem="GNd-zV-WUj" secondAttribute="centerX" id="yQp-cc-DTc"/>
+                            <constraint firstItem="oFB-nm-t7M" firstAttribute="top" secondItem="GNd-zV-WUj" secondAttribute="bottom" constant="44" id="2Hw-cu-dFB"/>
+                            <constraint firstItem="ydx-hu-hHm" firstAttribute="leading" secondItem="Aez-DL-FqD" secondAttribute="leading" id="5Mb-70-unQ"/>
+                            <constraint firstItem="wUy-D3-TPs" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leading" constant="162" id="76w-SP-nSu"/>
+                            <constraint firstAttribute="trailing" secondItem="d9L-XO-Yk2" secondAttribute="trailing" id="8Uv-0w-BTK"/>
+                            <constraint firstItem="JgE-Eh-uWz" firstAttribute="centerY" secondItem="oFB-nm-t7M" secondAttribute="centerY" id="CNZ-5s-2kU"/>
+                            <constraint firstItem="ydx-hu-hHm" firstAttribute="top" secondItem="JgE-Eh-uWz" secondAttribute="bottom" constant="97" id="FDd-Qd-xwL"/>
+                            <constraint firstItem="ydx-hu-hHm" firstAttribute="leading" secondItem="JgE-Eh-uWz" secondAttribute="leading" id="My9-ej-lNz"/>
+                            <constraint firstItem="Aez-DL-FqD" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leadingMargin" id="Vxd-lZ-G9C"/>
+                            <constraint firstItem="wUy-D3-TPs" firstAttribute="bottom" secondItem="Aez-DL-FqD" secondAttribute="bottom" id="VyL-vJ-gib"/>
+                            <constraint firstItem="oFB-nm-t7M" firstAttribute="leading" secondItem="JgE-Eh-uWz" secondAttribute="trailing" constant="76" id="XPU-AK-Hfp"/>
+                            <constraint firstItem="GNd-zV-WUj" firstAttribute="centerX" secondItem="d9L-XO-Yk2" secondAttribute="centerX" id="anc-HJ-YWT"/>
+                            <constraint firstItem="ydx-hu-hHm" firstAttribute="centerY" secondItem="m74-EP-1N0" secondAttribute="centerY" id="dGK-qr-VQg"/>
+                            <constraint firstItem="d9L-XO-Yk2" firstAttribute="top" secondItem="m74-EP-1N0" secondAttribute="top" id="gpd-yi-kat"/>
+                            <constraint firstItem="GNd-zV-WUj" firstAttribute="top" secondItem="d9L-XO-Yk2" secondAttribute="bottom" constant="17" id="lbp-wA-0IA"/>
+                            <constraint firstItem="Aez-DL-FqD" firstAttribute="top" secondItem="ydx-hu-hHm" secondAttribute="bottom" constant="23" id="lfT-Jf-lFB"/>
+                            <constraint firstItem="d9L-XO-Yk2" firstAttribute="leading" secondItem="m74-EP-1N0" secondAttribute="leading" id="npx-De-Rfi"/>
+                            <constraint firstItem="JgE-Eh-uWz" firstAttribute="top" secondItem="d9L-XO-Yk2" secondAttribute="bottom" constant="93" id="spU-N6-9iT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customTipBox" destination="JgE-Eh-uWz" id="24o-kb-qsg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jW4-C3-vcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

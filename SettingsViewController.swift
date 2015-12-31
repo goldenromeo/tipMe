@@ -18,37 +18,35 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var customTipBox: UITextField!
     
     
+    
+    
     /**
      * set custom tip
      *rightmost button
      */
     
-    @IBAction func customTipValueSetter(sender: AnyObject) {
     
     
-        if customTipBox.text!.isEmpty
-        {
-            defaults.setInteger(30, forKey: "customUserTipValue")
-            defaults.synchronize()
-            
-        }else
+    
+    @IBAction func CustomValueSetter(sender: AnyObject) {
+        
+        
+        
+        
+        if !customTipBox.text!.isEmpty
         {
             
             //get value
             
-            
             defaults.setInteger(Int(customTipBox.text!)!, forKey: "customUserTipValue")
             defaults.synchronize()
-            
+            //print(customTipBox.text)
+           
+        }
+      
         
 
-        
-        }
-    
-    
-    
     }
-    
     
     
     override func viewDidLoad() {

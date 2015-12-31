@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     //tip label initialize
     @IBOutlet weak var tipLabel: UITextField!
+     //load defaults
+    let defaults = NSUserDefaults.standardUserDefaults()
+    //variable for custom tip
+    var customTipValue = 0
     
+    @IBOutlet weak var customButton: UIButton!
     
     
     func calTip(tipAmount:Double){
@@ -69,29 +74,29 @@ class ViewController: UIViewController {
         
         if !tipLabel.text!.isEmpty
         {
-            calTip(1.30)
+            calTip(1 + ( Double(customTipValue) / 100 ))
             
         }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear")
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        print("view did appear")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("view will disappear")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("view did disappear")
+        
+       // print("check for default")
+        //get custom tip box value
+        
+        if (defaults.objectForKey("customUserTipValue")  != nil)
+        {
+            customTipValue = defaults.integerForKey("customUserTipValue")
+            
+            
+            customButton.setTitle("\(customTipValue)%☺️", forState: UIControlState.Normal)
+            
+        }
+        
+        
+        
+        
     }
     
     
