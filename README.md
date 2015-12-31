@@ -25,9 +25,11 @@ The following **additional** features are implemented:
 - [x] 3 buttons with smiley faces.
 - [x] if user clicks set on settings with no additional input button goes back to default.
 - [x] smiley faces stays across default change
+- 
+
 ## Video Walkthrough 
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented app:
 
 <img src='http://i.imgur.com/bJOwNKW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
