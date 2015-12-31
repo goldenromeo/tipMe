@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         //calculate tip amount
         let tipamount = Double(tipLabelText!)! * tipAmount
         
-        //use prefor
+        //Update box with result
         tipLabelText = "\(tipamount)"
         
         
@@ -73,6 +73,29 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view did disappear")
+    }
+    
+    
+    
     
     
     
