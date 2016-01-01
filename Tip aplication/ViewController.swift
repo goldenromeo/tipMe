@@ -15,7 +15,7 @@ class ViewController: UIViewController {
      //load defaults
     let defaults = NSUserDefaults.standardUserDefaults()
     //variable for custom tip
-    var customTipValue = 0
+    var customTipValue = 30
     
     @IBOutlet weak var customButton: UIButton!
     
